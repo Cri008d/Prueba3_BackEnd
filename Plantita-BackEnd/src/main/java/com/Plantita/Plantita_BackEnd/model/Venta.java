@@ -1,6 +1,9 @@
 package com.Plantita.Plantita_BackEnd.model;
 
+
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +13,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,20 +21,28 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "venta")
-public class Venta {
-    
+public class ProductoVenta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idVenta;
+    private Integer idProdVenta;
 
     @Column(nullable = false)
-    private LocalDate fecha;
+    private Integer cantidad;
 
     @Column(nullable = false)
-    private Boolean pagado;
+    private Integer precioProd;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idUsuario", nullable = false)
-    private Usuario usuario;
+    @Column(nullable = false)
+    private LocalDate fechaHora;
+
+    @ManyToOne
+    @JoinColumn(name = "idVenta", nullable = false)
+    @JsonBackReference
+    private Venta venta;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idProducto", nullable = false)
+    private Producto producto;
+    
 }
