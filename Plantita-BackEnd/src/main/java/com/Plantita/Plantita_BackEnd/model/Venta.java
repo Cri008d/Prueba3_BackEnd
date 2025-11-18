@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,11 +22,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductoVenta {
+@Table(name = "venta")
+public class Venta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idProdVenta;
+    private Integer idVenta;
 
     @Column(nullable = false)
     private Integer cantidad;
@@ -36,13 +38,28 @@ public class ProductoVenta {
     @Column(nullable = false)
     private LocalDate fechaHora;
 
-    @ManyToOne
-    @JoinColumn(name = "idVenta", nullable = false)
-    @JsonBackReference
-    private Venta venta;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idProducto", nullable = false)
     private Producto producto;
+
+    @ManyToOne
+    @JoinColumn(name = "idEstado", nullable = false)
+    @JsonBackReference
+    private Estado estado;
+
+    @ManyToOne
+    @JoinColumn(name = "idMetodoEnvio", nullable = false)
+    @JsonBackReference
+    private MetodoEnvio metodoEnvio;
+
+    @ManyToOne
+    @JoinColumn(name = "idMetPago", nullable = false)
+    @JsonBackReference
+    private MetodoPago metodoPago;
     
+    @ManyToOne
+    @JoinColumn(name = "id", nullable = false)
+    @JsonBackReference
+    private Direcciones direcciones;
 }

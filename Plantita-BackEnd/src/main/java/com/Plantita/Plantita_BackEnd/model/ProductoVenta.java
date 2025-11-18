@@ -1,9 +1,6 @@
 package com.Plantita.Plantita_BackEnd.model;
 
 
-import java.time.LocalDate;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -25,10 +22,15 @@ public class ProductoVenta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idProdVenta;
 
-    @Column(nullable = false)
-    private LocalDate fechaHora;
+
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idProducto", nullable = false)
     private Producto producto;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idVenta", nullable = false)
+    private Venta venta;
+
+
 }
