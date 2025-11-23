@@ -37,7 +37,5 @@ public class Producto {
     @JoinColumn(name = "idCategoria", nullable = false)
     private Categoria categoria;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idVenta", nullable = false)
-    private Venta venta;
+    
 }

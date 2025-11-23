@@ -10,6 +10,6 @@ import com.Plantita.Plantita_BackEnd.model.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer>{
 
-    List <Categoria> findByNombreCategoria(String nombreCategoria);
+    List <Categoria> findByNomCategoria(String nomCategoria);
     
 }

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PlantitaBackEndApplication<Plantita-BackEnd>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Plantita.Plantita_BackEnd.PlantitaBackEndApplication",
+            "projectName": "Plantita-BackEnd",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

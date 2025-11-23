@@ -3,10 +3,12 @@ package com.Plantita.Plantita_BackEnd.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.Plantita.Plantita_BackEnd.model.Imagenes;
 import com.Plantita.Plantita_BackEnd.repository.ImagenesRepository;
 
+@Service
 public class ImagenesService {
  
     @Autowired
