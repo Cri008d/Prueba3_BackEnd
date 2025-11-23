@@ -38,7 +38,7 @@ public class Usuario {
 
         @Column(name = "passUsuario", length = 30, nullable = false)
         @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-        private String contraseña;
+        private String contrasena;
 
         @ManyToOne
         @JoinColumn(name = "idRol") 

@@ -2,6 +2,7 @@ package com.Plantita.Plantita_BackEnd.controller;
 
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Plantita.Plantita_BackEnd.model.Usuario;
 import com.Plantita.Plantita_BackEnd.service.UsuarioService;
+
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController

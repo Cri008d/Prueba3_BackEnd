@@ -39,7 +39,7 @@ public class UsuarioService {
             if (usuario.getNombre() != null) usuarioE.setNombre(usuario.getNombre());
             if (usuario.getCorreo() != null) usuarioE.setCorreo(usuario.getCorreo());
             if (usuario.getDireccion() != null) usuarioE.setDireccion(usuario.getDireccion());
-            if (usuario.getContraseña() != null) usuarioE.setContraseña(usuario.getContraseña());
+            if (usuario.getContrasena() != null) usuarioE.setContrasena(usuario.getContrasena());
             return usuarioRepository.save(usuarioE);
         }
         return null;
