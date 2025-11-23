@@ -11,11 +11,11 @@ import com.Plantita.Plantita_BackEnd.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
-    List<Usuario> findByNombreUsuario(String nombreUsuario); 
+    List<Usuario> findByNombre(String nombre);
 
-    Optional<Usuario> findByCorreoUsuario(String correoUsuario); // En este caso, usamos "Optional", ya que el correo es unico, y tambien esta la posibilidad de que no exista
+    Optional<Usuario> findByCorreo(String correo);
     
-    List<Usuario> findByRol_idRol(Integer idRol);
+    List<Usuario> findByRolId(Integer idRol);
 
     
 }

@@ -2,6 +2,7 @@ package com.Plantita.Plantita_BackEnd.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +23,8 @@ public class TiposPlanta {
  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idTipoPlanta;
+    @Column(name = "id_relacion_planta")
+    private Integer idRelacion;
 
     @ManyToOne
     @JoinColumn(name = "idProducto", nullable = false)

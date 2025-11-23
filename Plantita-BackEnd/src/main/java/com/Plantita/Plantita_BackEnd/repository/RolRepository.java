@@ -10,6 +10,5 @@ import com.Plantita.Plantita_BackEnd.model.Rol;
 @Repository
 public interface RolRepository extends JpaRepository<Rol, Integer>{
 
-    Optional<Rol> findByNombreRol(String nombreRol);
-    
+    Optional<Rol> findByNombre(String nombre);
 }
